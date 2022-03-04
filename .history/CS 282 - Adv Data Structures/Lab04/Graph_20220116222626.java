@@ -1,4 +1,3 @@
-
 //Project Finished by Christian Jarmon
 import java.util.*;
 import java.io.*;
@@ -171,7 +170,7 @@ public class Graph<V> {
 		 * for (V a : vertices) { System.out.print(visited.get(a) + " -- "); }
 		 * System.out.println();
 		 */
-		// visited.replace(sV, true);
+		 //visited.replace(sV, true);
 		double[] cost = new double[vertices.size()];
 		for (int i = 0; i < cost.length; i++) {
 			cost[i] = Double.MAX_VALUE;
@@ -230,8 +229,7 @@ public class Graph<V> {
 		System.out.println("Cost of shortest path is " + cost[vertices.indexOf(eV)]);
 	}// shortest path ends
 
-	public int min(double[] c, Map<V, Boolean> vis) {// this function finds the vertex that connects to the most
-														// recently visited node that also has the smallest weight
+	public int min(double[] c, Map<V, Boolean> vis) {//this function finds the vertex that connects to the most recently visited node that also has the smallest weight
 		double minimum = Double.MAX_VALUE;
 		int vertex = 0;
 		// make a loop the continously finds the minimum weight for all neighbors given
@@ -258,7 +256,7 @@ public class Graph<V> {
 
 	public boolean isEdge(V a, V b) {// find matching index of neighbors
 		for (Edge q : neighbors.get(vertices.indexOf(a))) {
-			if (q.v == vertices.indexOf(b)) {		
+			if (q.v == vertices.indexOf(b)) 		
 				return true;
 			} // if ends
 		} // for ends

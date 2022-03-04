@@ -264,7 +264,7 @@ public class Graph<V> {
 		} // for ends
 	return false;
 
-	}// isEdge ends
+	// isEdge ends
 
 	public int tOL(LinkedList<V> vl) {
 		return (vl.size() - 1);

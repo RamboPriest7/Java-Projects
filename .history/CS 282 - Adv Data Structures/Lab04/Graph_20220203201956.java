@@ -258,7 +258,7 @@ public class Graph<V> {
 
 	public boolean isEdge(V a, V b) {// find matching index of neighbors
 		for (Edge q : neighbors.get(vertices.indexOf(a))) {
-			if (q.v == vertices.indexOf(b)) {		
+			if (q.v == vertices.indexOf(b)) 		
 				return true;
 			} // if ends
 		} // for ends
