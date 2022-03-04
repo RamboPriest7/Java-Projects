@@ -1,0 +1,467 @@
+/***************************************************************
+  Project Number 3 - Comp Sci 182 - Data Structures (w/ Swing)
+  Start Code - Build your program starting with this code
+               Card Game
+  Copyright 2005-2016 Christopher C. Ferguson
+  This code may only be used with the permission of Christopher C. Ferguson
+***************************************************************/
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+import java.io.*;
+
+public class Project3 extends JFrame implements ActionListener {
+
+  private static int winxpos=0,winypos=0;      // place window here
+
+
+  private JButton shuffleButton,exitButton, newButton;
+  private CardList theDeck = null;
+  private JPanel northPanel;
+  private MyPanel centerPanel;
+  private static JFrame myFrame = null;
+
+  static CardList Deck = null;
+  static CardList dealer = new CardList(0);
+  static  CardList player = new CardList(0);
+  static  CardList usedCards = null; // this list should be full of cards that have already been used
+
+  ////////////              MAIN      ////////////////////////
+  public static void main(String[] args) {
+
+    Project3 tpo = new Project3();
+  System.out.println("project created");
+
+
+
+
+
+
+    
+     
+  }//main ends
+
+  ////////////            CONSTRUCTOR   /////////////////////
+  public Project3 ()
+  {
+        myFrame = this;                 // need a static variable reference to a JFrame object
+        northPanel = new JPanel();
+        northPanel.setBackground(Color.red);
+        shuffleButton = new JButton("Shuffle");
+        northPanel.add(shuffleButton);
+        shuffleButton.addActionListener(this);
+        newButton = new JButton("New Deck");
+        northPanel.add(newButton);
+        newButton.addActionListener(this);
+        exitButton = new JButton("Exit");
+        northPanel.add(exitButton);
+        exitButton.addActionListener(this);
+        getContentPane().add("North",northPanel);
+System.out.println("panel is being created");
+        centerPanel = new MyPanel();
+        getContentPane().add("Center",centerPanel);
+        //printCard("images/gbCard52.gif");
+        System.out.println("panel has been created");
+
+      
+    Deck = new CardList(52);
+game();
+        setSize(800,1600);
+        setLocation(900,winypos);
+
+        setVisible(true);
+   }
+
+
+  ////////////   BUTTON CLICKS ///////////////////////////
+  public void actionPerformed(ActionEvent e) {
+
+      if (e.getSource()== exitButton) {
+        dispose(); System.exit(0);
+      }
+       if (e.getSource()== shuffleButton) {
+        theDeck.shuffle();
+        repaint();
+      }
+       if (e.getSource()== newButton) {
+        theDeck = new CardList(52);
+        repaint();
+      }
+  }
+
+
+// This routine will load an image into memory
+//
+public static Image load_picture(String fname)
+{
+        // Create a MediaTracker to inform us when the image has
+        // been completely loaded.
+        Image image;
+        MediaTracker tracker = new MediaTracker(myFrame);
+
+
+        // getImage() returns immediately.  The image is not
+        // actually loaded until it is first used.  We use a
+        // MediaTracker to make sure the image is loaded
+        // before we try to display it.
+
+        image = myFrame.getToolkit().getImage(fname);
+
+        // Add the image to the MediaTracker so that we can wait
+        // for it.
+        tracker.addImage(image, 0);
+        try { tracker.waitForID(0); }
+        catch ( InterruptedException e) { System.err.println(e); }
+
+        if (tracker.isErrorID(0)) { image=null;}
+        return image;
+}
+// --------------   end of load_picture ---------------------------
+
+class MyPanel extends JPanel {
+
+  ////////////    PAINT   ////////////////////////////////
+   public void paintComponent (Graphics g) {
+     //
+     int xpos = 25, ypos = 5;
+     if (Deck == null) return;
+     Card current = Deck.getFirstCard();
+     while (current!=null) {
+        Image tempimage = current.getCardImage();
+        g.drawImage(tempimage, xpos, ypos, this);
+        // note: tempimage member variable must be set BEFORE paint is called
+        xpos += 80;
+        if (xpos > 700) {
+           xpos = 25; ypos += 105;
+        }
+        current = current.getNextCard();
+     } //while
+   }
+ }
+ //mypanel ends
+
+
+
+
+ static int playerScore = 0, dealerScore = 0;
+ public  static  void game() {
+ 
+ 
+ 
+ dealCards();
+ System.out.println("player score is: " + playerScore + " dealer score is: " + dealerScore);
+ }
+ 
+ public  static void dealCards() {//to add cards in to the hand. this should also be used for Hit in game
+ //whatever card has been added, remove that from the deck
+ int newCardNum ; //later when program is working, use this random, set that to a int and get that int from Deck
+ for (int i =1; i <= 2; i++) {
+  newCardNum = (int)(Math.random()*51);
+  System.out.println("new card num is: " + newCardNum );
+ Card newCard = new Card(newCardNum);
+ 
+  dealer.insertCard(newCard);
+  System.out.println(newCard.getSuit() + " " + newCard.getNumValue());
+ Deck.deleteCard(newCardNum); 
+ if (newCard.getNumValue() == 1) {
+     System.out.println("ACE DETECTED!!!!!!!!!!!!!!!!!!!");
+ }
+ 
+ System.out.println("dealer dealt\n\n");
+ 
+ 
+ 
+ 
+ newCardNum = (int)(Math.random()*51);
+ System.out.println("new card num is: " + newCardNum );
+ Card newCard2 = new Card(newCardNum);
+ player.insertCard(newCard2);
+ System.out.println(newCard2.getSuit() + " " + newCard2.getNumValue());
+ Deck.deleteCard(newCardNum);
+ System.out.println("player dealt\n\n");
+ if (newCard2.getNumValue() == 1) {
+     System.out.println("ACE DETECTED!!!!!!!!!!!!!!!!!!!");
+ }
+ 
+ 
+ playerScore += newCard2.getNumValue();
+ dealerScore += newCard.getNumValue();
+ if (playerScore == newCard2.getNumValue() + 1 && playerScore < 11) {
+ playerScore += 10;
+ }
+ if (dealerScore == newCard.getNumValue() + 1 && dealerScore < 11) {
+ playerScore += 10;
+ }
+ 
+ }//for ends
+ //Deck.deleteCard(newCardNum);
+ }//dealCard ends
+ 
+ 
+ public static  void hit() {
+     dealer.insertCard(new Card((int)Math.random()*51));
+ 
+ }//hit ends
+ public  static  void cleanHands(CardList hand) {//paramter hand is the whichever hand the function is dealing with, not to be confused with player hand globaly
+ 
+ 
+ 
+ }//clean hands ends
+ public CardList getDealerHand() {
+ return dealer;
+ }
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}    // End Of class Project3
+
+/*****************************************************************
+   Class Link, the base class for a link list of playing cards
+   May be placed in a file named Link.java
+
+******************************************************************/
+class Link {
+  protected Link next;
+
+  public Link getNext() { return next; }
+  public void setNext(Link newnext) { next = newnext; }
+
+}  // end class Link
+
+/*****************************************************************
+   Class Card, the derived class each card is one object of type Card
+   May be placed in a file named Card.java
+******************************************************************/
+
+class Card extends Link {
+  private Image cardimage;
+  String suit = "";
+  int numValue;
+String cardName;
+  public Card (int cardnum) {
+  
+     cardName = "images/gbCard" + cardnum + ".gif";
+    //cardimage = Project3.load_picture("images/gbCard" + cardnum + ".gif");
+   
+    if (cardnum < 13) {
+      suit = "club";
+        } else if (cardnum < 26 && cardnum > 12) {
+          suit = "diamond";
+        } else if (cardnum < 39 && cardnum > 25) {
+          suit = "heart";
+        }else if (cardnum < 52 && cardnum > 38) {
+          suit = "spade";
+        }
+      if (suit == "club") {
+        if (cardnum == 0) {
+          numValue = 1;
+        }
+if (cardnum >= 1 && cardnum <= 9) {
+  numValue = cardnum + 1;
+}
+if (cardnum >= 10) {
+  numValue = 10;
+}
+      }//club if ends
+      if (suit == "diamond") {
+        if (cardnum == 13) {
+          numValue = 1;
+        }
+if (cardnum >= 14 && cardnum <= 22) {
+  numValue = cardnum - 12;
+}
+if (cardnum >= 23) {
+  numValue = 10;
+}
+      }//diamond if ends   
+      if (suit == "heart") {
+        if (cardnum == 26) {
+          numValue = 1;
+        }
+if (cardnum >= 27 && cardnum <= 35) {
+  numValue = cardnum - 25;
+}
+if (cardnum >= 36) {
+  numValue = 10;
+}
+      }//heart if ends
+   if (suit == "diamond") {
+        if (cardnum == 39) {
+          numValue = 1;
+        }
+if (cardnum >= 40 && cardnum <= 48) {
+  numValue = cardnum - 38;
+}
+if (cardnum >= 49) {
+  numValue = 10;
+}
+      }//diamond if ends
+
+
+
+
+      // code ASSUMES there is an images sub-dir in your project folder
+    
+    
+  }//con ends
+
+  public Card getNextCard() {
+    return (Card)next;
+  }
+  public Image getCardImage() {
+    return cardimage;
+  }
+  public String getSuit() {
+    return suit;
+  }
+  public int getNumValue() {
+    return numValue;
+  }
+public String getCardName() {
+  return cardName;
+}
+
+  public void printCard() {
+    cardimage = Project3.load_picture(cardName);
+    if (cardimage == null) {
+      System.out.println("Error - image failed to load: "+ cardName);
+      System.exit(-1);
+    
+    }
+   
+    
+  }//print card ends
+  public void printCard(String name) {
+    Project3.load_picture(name);
+  }
+}  //end class Card
+
+/*****************************************************************
+   Class CardList, A Linked list of playing cards
+   May be placed in a file named CardList.java
+
+   Note : This class can be used to create a 'hand' of cards
+   Just Create another CardList object, and delete cards from
+   'theDeck' and insert the cards into the new CardList object
+
+******************************************************************/
+
+class CardList {
+  private Card firstcard = null;
+  private int numcards=0;
+
+  public  CardList(int num) {
+    numcards = num;   //set numcards in the deck
+    for (int i = 0; i < num; i++) {  // load the cards
+      Card temp = new Card(i);
+      if (firstcard != null) {
+        temp.setNext(firstcard);
+      }
+      firstcard = temp;
+    }
+    
+  }
+
+  public Card getFirstCard() {
+      return firstcard;
+  }
+
+  public Card deleteCard(int cardnum) {
+    Card target, targetprevious;
+
+    if (cardnum > numcards)
+      return null;   // not enough cards to delete that one
+    else
+      numcards--;
+
+    target = firstcard;
+    targetprevious = null;
+    while (cardnum-- > 0) {
+        targetprevious = target;
+        target = target.getNextCard();
+        if (target == null) return null;  // error, card not found
+    }
+    if (targetprevious != null)
+      targetprevious.setNext(target.getNextCard());
+    else
+      firstcard =  target.getNextCard();
+    return target;
+  }
+
+  public void insertCard(Card target) {
+    numcards++;
+    if (firstcard != null)
+      target.setNext(firstcard);
+    else
+      target.setNext(null);
+    firstcard =  target;
+  }
+
+  public void shuffle() {
+    for ( int i = 0; i < 300; i++) {
+      int rand = (int)(Math.random() * 100) % numcards;
+      Card temp = deleteCard(rand);
+      if (temp != null) insertCard(temp);
+    }  // end for loop
+  }   // end shuffle
+
+public void printCardList() {
+ System.out.println("printing cards");
+  Card currCard = this.getFirstCard();
+  while (currCard != null) {
+currCard.printCard();
+currCard = currCard.getNextCard();
+  }
+
+}// print list ends
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}    // end class CardList
+
+
