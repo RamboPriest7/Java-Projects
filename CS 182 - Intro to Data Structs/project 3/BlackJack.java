@@ -133,6 +133,6 @@ class BlackJack {
         if (playerScore == dealerScore)
             return true;
         return false;
-    }
+    } 
 
 } // blackjack class ends
