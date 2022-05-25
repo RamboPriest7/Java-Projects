@@ -12,11 +12,12 @@ public class Project1 {
     static int N, notStable = 0;
 
     public static boolean checkStable(int currManID, int currWomanID) {
-
+       
+ 
         if (currWomanID == matchings[currManID - 1]) {
             return false;
         }
-        System.out.println("currManID, currWomanID == " + currManID + " " + currWomanID);
+        System.out.println("currManID, currWomanID == " + currManID + " " + currWomanID );
         int pref_of_His_Match = -1, pref_of_Her_Match = -1, pref_of_currMan = -1, pref_of_currWoman = -1;
         int herCurrMatch = -1;
 
@@ -27,18 +28,22 @@ public class Project1 {
         }
 
         for (int i = 0; i < N; i++) {
-            if (matchings[i] == currWomanID) {
-                herCurrMatch = matchings[i];
-                // System.out.println("Matchings[i] " + matchings[i] + " i=>" + i);
+            if ( matchings[i] == currWomanID ) {
+               herCurrMatch = matchings[i];
+               //System.out.println("Matchings[i] " + matchings[i] + " i=>" + i);
             }
         }
 
         for (int i = 0; i < N; i++) {
-            // System.out.println("her Desire " + womensDesire[currWomanID - 1][i]);
+           //System.out.println("her Desire " + womensDesire[currWomanID - 1][i]);
             if (herCurrMatch == womensDesire[currWomanID - 1][i]) {
+               
                 pref_of_Her_Match = i;
+                
             }
         }
+
+       
 
         for (int i = 0; i < N; i++) {
             if (currManID == womensDesire[currWomanID - 1][i]) {
@@ -51,9 +56,8 @@ public class Project1 {
                 pref_of_currWoman = i;
             }
         }
-        System.out.println(
-                pref_of_currWoman + " " + pref_of_His_Match + " " + pref_of_currMan + " " + pref_of_Her_Match + " ");
-        // System.out.println(pref_of_Her_Match);
+        System.out.println(pref_of_currWoman + " " + pref_of_His_Match + " " +pref_of_currMan + " " + pref_of_Her_Match + " " );
+        //System.out.println(pref_of_Her_Match);
         return ((pref_of_currWoman < pref_of_His_Match) && (pref_of_currMan < pref_of_Her_Match));
 
     }// end function
@@ -104,3 +108,4 @@ public class Project1 {
 
     }// main ends
 }// class ends
+

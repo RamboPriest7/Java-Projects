@@ -36,7 +36,9 @@ public class Project1 {
         for (int i = 0; i < N; i++) {
             // System.out.println("her Desire " + womensDesire[currWomanID - 1][i]);
             if (herCurrMatch == womensDesire[currWomanID - 1][i]) {
+
                 pref_of_Her_Match = i;
+
             }
         }
 
