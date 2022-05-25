@@ -86,9 +86,8 @@ public class Project1 {
         for (int i = N * 2; i < (N * 3); i++) {
             String[] temp = new String[N];
             temp = vals[i].split(" ");
-            for (int j = 0; j < (2); j++) {
-                matchings[i - (N * 2)] = Integer.parseInt(temp[1]);
-            }
+            matchings[i - (N * 2)] = Integer.parseInt(temp[1]);
+          
         } // for ends
 
         for (int i = 1; i <= N; i++) {
