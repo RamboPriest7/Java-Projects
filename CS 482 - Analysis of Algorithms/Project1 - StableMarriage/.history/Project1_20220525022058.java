@@ -12,27 +12,12 @@ public class Project1 {
     static int[] matchings;
     static int N, notStable = 0;
 
-    public static boolean checkUnstable(int currManID, int currWomanID) {
+    public static boolean checkStable(int currManID, int currWomanID) {
 
         if (currWomanID == matchings[currManID - 1]) {
             return false;
         }
-        //System.out.println("currManID, currWomanID == " + currManID + " " + currWomanID);
-        int pref_of_His_Match = -1, pref_of_Her_Match = -1, pref_of_currMan = -1, pref_of_currWoman = -1;
-        int herCurrMatch = -1;
-
-        for (int i = 0; i < N; i++) {
-            if (matchings[currManID - 1] == mensDesire[currManID - 1][i]) {
-                pref_of_His_Match = i;
-            }
-        }
-
-        for (int i = 0; i < N; i++) {
-            if (matchings[i] == currWomanID) {
-                herCurrMatch = matchings[i];
-                // System.out.println("Matchings[i] " + matchings[i] + " i=>" + i);
-            }
-        }
+        //System.out.println("currManID, currWoma
 
         for (int i = 0; i < N; i++) {
             // System.out.println("her Desire " + womensDesire[currWomanID - 1][i]);
@@ -94,7 +79,7 @@ public class Project1 {
 
         for (int i = 1; i <= N; i++) {
             for (int j = 1; j <= N; j++) {
-                if (checkUnstable(i, j)) {
+                if (checkStable(i, j)) {
                     notStable++;
                 }
             }
