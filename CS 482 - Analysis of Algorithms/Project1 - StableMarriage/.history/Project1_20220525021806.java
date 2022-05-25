@@ -1,5 +1,5 @@
-//Name: Christian Jarmon
-//Project: #1 Stable Marriage
+//name: Christian Jarmon
+//Projec
 import java.lang.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
