@@ -111,7 +111,7 @@ public class Project1 {
             }
         }
 
-        System.out.println(notStable);
+        System.out.println( + notStable);
 
     }// main ends
 }// class ends
