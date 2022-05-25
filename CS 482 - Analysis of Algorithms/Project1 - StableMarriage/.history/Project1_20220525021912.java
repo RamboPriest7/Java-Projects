@@ -52,7 +52,8 @@ public class Project1 {
                 pref_of_currWoman = i;
             }
         }
-       // System.out.println( pref_of_currWoman + " " + pref_of_His_Match + " " + pref_of_currMan + " " + pref_of_Her_Match + " ");
+       // System.out.println(
+     pref_of_currWoman + " " + pref_of_His_Match + " " + pref_of_currMan + " " + pref_of_Her_Match + " ");
         // System.out.println(pref_of_Her_Match);
         return ((pref_of_currWoman < pref_of_His_Match) && (pref_of_currMan < pref_of_Her_Match));
 
