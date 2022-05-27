@@ -19,6 +19,9 @@ public class Project2 {
             
             visited[i][j] = true;
 
+            //need to mark all the adjacent indicies to prevent double counting
+
+            
             // up
             puddles(i - 1, j);
             // down
