@@ -13,6 +13,8 @@ public class Project2 {
     static boolean[][] visited;
 
     public static void puddles(int i, int j) {
+        //cant be negative or more than the amount of rows and cols, has to be inside grid
+        //if the shit is not an island, forget about it
         if (!(i < 0 || j < 0 || i >= map.length || j >= map[0].length || map[i][j] != 0 || visited[i][j])) {
             visited[i][j] = true;
 
@@ -33,7 +35,7 @@ public class Project2 {
         map = new int[Integer.parseInt(sizes[0])][Integer.parseInt(sizes[1])];
         visited = new boolean[Integer.parseInt(sizes[0])][Integer.parseInt(sizes[1])];
 
-        
+
         String[] vals = new String[Integer.parseInt(sizes[0])];
         for (int i = 1; i < Integer.parseInt(sizes[0]) + 1; i++) {
             vals[i - 1] = Files.readAllLines(Paths.get("input.txt")).get(i);
