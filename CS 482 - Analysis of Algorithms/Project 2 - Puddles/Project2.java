@@ -16,16 +16,21 @@ public class Project2 {
         //cant be negative or more than the amount of rows and cols, has to be inside grid
         //if the shit is not an island, forget about it
         if (!(i < 0 || j < 0 || i >= map.length || j >= map[0].length || map[i][j] != 0 || visited[i][j])) {
+            
             visited[i][j] = true;
 
             // up
             puddles(i - 1, j);
-            // right
-            puddles(i, j + 1);
             // down
             puddles(i + 1, j);
+
+
             // left
             puddles(i, j - 1);
+            // right
+            puddles(i, j + 1);
+            
+            
         }
 
     }
@@ -65,5 +70,3 @@ public class Project2 {
     }// main ends
 }// class ends
 
-// Stop Case for a Puddle:
-// If current column
