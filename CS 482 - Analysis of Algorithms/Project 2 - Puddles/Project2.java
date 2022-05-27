@@ -19,7 +19,7 @@ public class Project2 {
             
             visited[i][j] = true;
 
-            //need to mark all the adjacent indicies to prevent double counting
+            //need to mark all the adjacent indices to prevent double counting
 
 
             // up
@@ -33,7 +33,9 @@ public class Project2 {
             // right
             puddles(i, j + 1);
             
-            
+            //if diagonal puddles counted
+            //puddles(i+1, j+1);
+            //puddles(i-1, j-1);
         }
 
     }
