@@ -21,7 +21,7 @@ public class Project2 {
 
             //need to mark all the adjacent indicies to prevent double counting
 
-            
+
             // up
             puddles(i - 1, j);
             // down
@@ -62,6 +62,7 @@ public class Project2 {
         for (int i = 0; i < Integer.parseInt(sizes[0]); i++) {
             for (int j = 0; j < Integer.parseInt(sizes[1]); j++) {
                 if (map[i][j] == 0 && !(visited[i][j])) {
+                    //if we need another puddle and its not visited add another one, call the puddles function to mark adjacent indices
                     puddles(i, j);
                     puddles++;
                 }
