@@ -1,4 +1,4 @@
-Project 1: Stable Marriage---------------
+# Project 1: Stable Marriage---------------
 
 Overview: Your program will be given an instance of StableMarriage and a matching and you will
 determine how many instabilities it has. Note a stable matching will output 0 and an unstable matching
@@ -14,15 +14,15 @@ Your program will determine the number of instabilities and output this value.
 
 Sample execution: If input.txt contains
 
-3
-1 2 3
-2 3 1
-3 1 2
-3 2 1
-1 3 2
-2 1 3
-1 2
-2 3
+3\
+1 2 3\
+2 3 1\
+3 1 2\
+3 2 1\
+1 3 2\
+2 1 3\
+1 2\
+2 3\
 3 1
 
 then the output should be just the number of instabilities
@@ -31,12 +31,12 @@ then the output should be just the number of instabilities
 More detailed explanation of sample input/output:
 The input file describes an instance with the preference lists
 
-M1 | W1 W2 W3
-M2 | W2 W3 W1
+M1 | W1 W2 W3\
+M2 | W2 W3 W1\
 M3 | W3 W1 W2
 
-W1 | M3 M2 M1
-W2 | M1 M3 M2
+W1 | M3 M2 M1\
+W2 | M1 M3 M2\
 W3 | M2 M1 M3
 
 and the matching {(M1, W2), (M2, W3), (M3, W1)}. This matching is stable, since every woman is paired
@@ -45,15 +45,15 @@ with her favorite man (a sufficient, but not necessary condition). However, your
 want to change (and in some cases the man also wouldn’t want to change).
 If input.txt contains
 
-3
-1 2 3
-2 3 1
-3 1 2
-3 2 1
-1 3 2
-2 1 3
-1 3
-2 1
+3\
+1 2 3\
+2 3 1\
+3 1 2\
+3 2 1\
+1 3 2\
+2 1 3\
+1 3\
+2 1\
 3 2
 
 the the output should be just the number of instabilities.
@@ -62,12 +62,12 @@ the the output should be just the number of instabilities.
 More detailed explanation of sample input/output:
 The input file describes an instance with the preference lists
 
-M1 | W1 W2 W3
-M2 | W2 W3 W1
+M1 | W1 W2 W3\
+M2 | W2 W3 W1\
 M3 | W3 W1 W2
 
-W1 | M3 M2 M1
-W2 | M1 M3 M2
+W1 | M3 M2 M1\
+W2 | M1 M3 M2\
 W3 | M2 M1 M3
 
 and the matching {(M1, W3), (M2, W1), (M3, W2)}. Checking the 9 man/woman pairs:
@@ -87,7 +87,7 @@ So there are exactly 3 instabilities.
 
 
 
-Project 2: Puddles---------------
+# Project 2: Puddles---------------
 
 Overview: Your program will be given a “map” of wet and dry locations and you will determine how many
 seperate puddles (contiguous wet areas) are depicted.
@@ -110,11 +110,11 @@ ponents in the graph).
 
 Sample execution: If input.txt contains
 
-5 10
-1 1 1 1 1 1 0 1 1 1
-1 1 1 1 1 1 0 1 1 1
-1 1 0 1 1 1 0 1 1 1
-1 1 0 0 0 0 0 1 1 1
+5 10\
+1 1 1 1 1 1 0 1 1 1\
+1 1 1 1 1 1 0 1 1 1\
+1 1 0 1 1 1 0 1 1 1\
+1 1 0 0 0 0 0 1 1 1\
 1 1 1 0 0 0 0 1 1 1
 
 then the output should be
@@ -123,16 +123,16 @@ then the output should be
 
 If input.txt contains
 
-10 15
-0 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-1 0 1 1 1 1 1 1 1 1 1 1 1 1 1
-1 1 0 1 1 1 1 1 1 1 1 1 1 1 1
-1 1 1 0 1 1 1 1 1 1 1 1 1 1 1
-1 1 1 1 0 1 1 1 1 1 1 0 1 0 1
-1 1 1 1 1 0 1 1 1 1 1 0 1 0 1
-1 1 1 1 1 1 0 1 1 1 1 0 1 0 1
-1 1 1 1 1 1 1 0 1 1 1 0 1 0 1
-1 1 1 1 1 1 1 1 0 1 1 0 1 0 1
+10 15\
+0 1 1 1 1 1 1 1 1 1 1 1 1 1 1\
+1 0 1 1 1 1 1 1 1 1 1 1 1 1 1\
+1 1 0 1 1 1 1 1 1 1 1 1 1 1 1\
+1 1 1 0 1 1 1 1 1 1 1 1 1 1 1\
+1 1 1 1 0 1 1 1 1 1 1 0 1 0 1\
+1 1 1 1 1 0 1 1 1 1 1 0 1 0 1\
+1 1 1 1 1 1 0 1 1 1 1 0 1 0 1\
+1 1 1 1 1 1 1 0 1 1 1 0 1 0 1\
+1 1 1 1 1 1 1 1 0 1 1 0 1 0 1\
 1 1 1 1 1 1 1 1 1 0 1 0 1 0 1
 
 the the output should be
