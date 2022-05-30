@@ -1,6 +1,5 @@
 //Name: Christian Jarmon
 //Project #1: Stable Marriage
-import java.lang.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.io.*;
