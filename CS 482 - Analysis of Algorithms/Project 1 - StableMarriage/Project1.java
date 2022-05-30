@@ -27,8 +27,8 @@ public class Project1 {
 
         for (int i = 0; i < N; i++) {
             if (matchings[i] == currWomanID) {
-                herCurrMatch = matchings[i];
-                // System.out.println("Matchings[i] " + matchings[i] + " i=>" + i);
+                herCurrMatch = i+1;
+                // System.out.println("CurrWoman " + currWomanID + " " + "Matchings[i] " + matchings[i] + " i=>" + (i+1));
             }
         }
 
