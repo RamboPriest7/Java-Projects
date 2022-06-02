@@ -52,7 +52,9 @@ if (womenEng[woman - 1] == -1) {
         }
 
         return (index_of_man < index_of_womans_match);
-    }
+    } 
+
+   
 
     public static void proposeDispose() {
         for (int m = 1; m <= N; m++) {
@@ -68,7 +70,6 @@ if (womenEng[woman - 1] == -1) {
                 }
             }
         }
-      
     }
 
     public static boolean checkUnstable(int currManID, int currWomanID) {
@@ -170,6 +171,7 @@ if (womenEng[woman - 1] == -1) {
         }
 
         System.out.println(notStable);
+        /*
         while (!allEng()) {
             proposeDispose();
             for (int m = 1; m <= N; m++) {
@@ -178,7 +180,7 @@ if (womenEng[woman - 1] == -1) {
                 System.out.println();
             }
             System.out.println("-----------------");
-        }
+        }*/
         //for (int m = 1; m <= N; m++) {
          //   System.out.println("Man #" + m + " :: Woman #" + menEng[m - 1]);
         //}
