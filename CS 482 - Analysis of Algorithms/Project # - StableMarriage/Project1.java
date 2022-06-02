@@ -12,12 +12,12 @@ public class Project1 {
     static int N, notStable = 0;
     static int[] menEng, womenEng;
     static int[] menDisEng;
-    //use menDisEng to rid of women that were already proposed to
-    //if a woman was already proposed to, skip it
+    // use menDisEng to rid of women that were already proposed to
+    // if a woman was already proposed to, skip it
 
     public static boolean allEng() {
         for (int i = 0; i < N; i++) {
-            if ( womenEng[i] == -1) {
+            if (womenEng[i] == -1) {
                 return false;
             }
         }
@@ -29,16 +29,16 @@ public class Project1 {
 
         // herCurrMatch => womensEng[woman-1]
 
-if (womenEng[woman - 1] == -1) {
-    //menEng[womenEng[woman - 1] - 1] = -1;
-    womenEng[woman - 1] = man;
-    menEng[man - 1] = woman;
-   
-                        //menDisEng[man-1] = woman;
-    return false;
-}
+        if (womenEng[woman - 1] == -1) {
+            // menEng[womenEng[woman - 1] - 1] = -1;
+            womenEng[woman - 1] = man;
+            menEng[man - 1] = woman;
 
-        if (menDisEng[man-1] == woman) {
+            // menDisEng[man-1] = woman;
+            return false;
+        }
+
+        if (menDisEng[man - 1] == woman) {
             return false;
         }
 
@@ -52,21 +52,19 @@ if (womenEng[woman - 1] == -1) {
         }
 
         return (index_of_man < index_of_womans_match);
-    } 
-
-   
+    }
 
     public static void proposeDispose() {
         for (int m = 1; m <= N; m++) {
             for (int w = 1; w <= N; w++) {
                 if (wws(m, w)) {
                     if (womenEng[w - 1] != -1) {
-                    menDisEng[womenEng[w - 1] - 1] = w;
-                    menEng[womenEng[w - 1] - 1] = -1;
+                        menDisEng[womenEng[w - 1] - 1] = w;
+                        menEng[womenEng[w - 1] - 1] = -1;
                     }
                     womenEng[w - 1] = m;
                     menEng[m - 1] = w;
-                    
+
                 }
             }
         }
@@ -171,19 +169,19 @@ if (womenEng[woman - 1] == -1) {
         }
 
         System.out.println(notStable);
-        
+
         while (!allEng()) {
             proposeDispose();
             for (int m = 1; m <= N; m++) {
-                System.out.println("Man #" +  womenEng[m - 1] + " :: Woman #" + m);
-               // System.out.println("Woman #" + m + " :: Man #" + womenEng[m - 1]);
+                System.out.println("Man #" + womenEng[m - 1] + " :: Woman #" + m);
+                // System.out.println("Woman #" + m + " :: Man #" + womenEng[m - 1]);
                 System.out.println();
             }
             System.out.println("-----------------");
         }
-        //for (int m = 1; m <= N; m++) {
-         //   System.out.println("Man #" + m + " :: Woman #" + menEng[m - 1]);
-        //}
+        // for (int m = 1; m <= N; m++) {
+        // System.out.println("Man #" + m + " :: Woman #" + menEng[m - 1]);
+        // }
 
     }// main ends
 }// class ends
