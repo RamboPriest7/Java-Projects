@@ -17,7 +17,7 @@ public class Project1 {
 
     public static boolean allEng() {
         for (int i = 0; i < N; i++) {
-            if (menEng[i] == -1 || womenEng[i] == -1) {
+            if ( womenEng[i] == -1) {
                 return false;
             }
         }
@@ -171,16 +171,16 @@ if (womenEng[woman - 1] == -1) {
         }
 
         System.out.println(notStable);
-        /*
+        
         while (!allEng()) {
             proposeDispose();
             for (int m = 1; m <= N; m++) {
-                System.out.println("Man #" + m + " :: Woman #" + menEng[m - 1]);
-                System.out.println("Woman #" + m + " :: Man #" + womenEng[m - 1]);
+                System.out.println("Man #" +  womenEng[m - 1] + " :: Woman #" + m);
+               // System.out.println("Woman #" + m + " :: Man #" + womenEng[m - 1]);
                 System.out.println();
             }
             System.out.println("-----------------");
-        }*/
+        }
         //for (int m = 1; m <= N; m++) {
          //   System.out.println("Man #" + m + " :: Woman #" + menEng[m - 1]);
         //}
