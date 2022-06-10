@@ -121,7 +121,7 @@ public class Project1 {
     }// end function
 
     public static void main(String[] args) throws IOException {
-        N = Integer.parseInt(Files.readAllLines(Paths.get("input.txt")).get(0));
+        N = Integer.parseInt(Files.readAllLines(Paths.get("C://Users//kyeou//Dropbox//PC (2)//Desktop//Stuff On Github//Kyeou-Java//CS 482 - Analysis of Algorithms//Project # - StableMarriage//input.txt")).get(0));
         mensDesire = new int[N][N];
         womensDesire = new int[N][N];
         matchings = new int[N];
@@ -169,7 +169,7 @@ public class Project1 {
         }
 
         System.out.println(notStable);
-
+/* 
         while (!allEng()) {
             proposeDispose();
             for (int m = 1; m <= N; m++) {
@@ -178,7 +178,7 @@ public class Project1 {
                 System.out.println();
             }
             System.out.println("-----------------");
-        }
+        } */
         // for (int m = 1; m <= N; m++) {
         // System.out.println("Man #" + m + " :: Woman #" + menEng[m - 1]);
         // }
