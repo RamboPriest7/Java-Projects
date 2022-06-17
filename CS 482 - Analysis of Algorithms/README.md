@@ -1,4 +1,4 @@
-# Project 1: Stable Marriage---------------
+# Project #: Stable Marriage---------------
 
 Overview: Your program will be given an instance of StableMarriage and a matching and you will
 determine how many instabilities it has. Note a stable matching will output 0 and an unstable matching
@@ -87,7 +87,7 @@ So there are exactly 3 instabilities.
 
 
 
-# Project 2: Puddles---------------
+# Project #: Puddles---------------
 
 Overview: Your program will be given a “map” of wet and dry locations and you will determine how many
 seperate puddles (contiguous wet areas) are depicted.
@@ -137,3 +137,60 @@ If input.txt contains
 
 the the output should be
 12
+
+# Project 1: Dog Adoption
+
+Overview: DogAdoption is a slight variant of the StableMarriage problem. Instead of a set of N men
+and N women, there are N owners and 2N dogs. Instead of a matching pairing each man with a woman,
+each owner is matched with 2 dogs. Instead of stable meaning there is no pair m-w who would both prefer
+the other to their partner, it means there is no pair o-d where the owner o prefers d to 1 of his dogs and
+the dog d prefers owner o. There is a fairly obvious modification of Propose-Dispose which can solve any
+instance of the DogAdoption problem.\
+
+Details: The input will come from a file called input.txt which will be placed in the same directory as your
+java file. The first line of the file will have a single integer value N which will be the number of owners. The
+next N lines will be the whitespace separated preference lists of the N owners (ie each of the next N lines
+will be a permutation of 1, 2, ..., 2N). The next 2N lines will be the whitespace separated preference lists of
+the 2N dogs (ie eachof the next 2N lines will be a permutation of 1, 2, ..., N). See the sample input below
+for examples.
+
+Sample execution: If input.txt contains
+3\
+1 2 3 4 5 6\
+3 4 5 6 1 2\
+5 6 1 2 3 4\
+1 2 3\
+1 2 3\
+2 3 1\
+2 3 1\
+3 1 2\
+3 1 2
+
+then the output should be just the “matching”.\
+1: 1 2\
+2: 3 4\
+3: 5 6
+
+If input.txt contains
+5\
+1 2 3 4 5 6 7 8 9 10\
+1 2 3 4 5 6 7 8 9 10\
+1 2 3 4 5 6 7 8 9 10\
+1 2 3 4 5 6 7 8 9 10\
+1 2 3 4 5 6 7 8 9 10\
+5 4 3 2 1\
+4 1 2 3 5\
+3 5 2 1 4\
+1 2 3 4 5\
+5 3 4 2 1\
+1 2 3 4 5\
+2 5 4 3 1\
+3 5 1 2 4\
+2 1 4 5 3\
+4 5 3 2 1\
+then the output should be the matching
+1: 4 6\
+2: 7 9\
+3: 3 8\
+4: 2 10\
+5: 1 5
