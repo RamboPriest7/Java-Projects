@@ -111,7 +111,7 @@ public class Project1 {
                         }
                         proposal_count[i - 1]++;
                         // checkCurrDogs(i);
-                         debug_print();
+                        // debug_print();
 
                     } else {
                         proposal_count[i - 1]++;
