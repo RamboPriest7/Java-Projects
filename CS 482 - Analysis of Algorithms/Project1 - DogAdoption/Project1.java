@@ -150,7 +150,7 @@ public class Project1 {
     static boolean empty_o = false, empty_d = false;
 
     public static void main(String[] args) throws IOException {
-      // new StableFile(3);
+      //new StableFile(3);
         N = Integer.parseInt(Files.readAllLines(Paths.get("input.txt")).get(0));
         owners_desire = new int[N][N * 2];
         dogs_desire = new int[N * 2][N];
