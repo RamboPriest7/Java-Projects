@@ -58,8 +58,8 @@ public class Project3 {
 
 
                 int m = N - 1, k = N - 1 - m;
-                /* m = Count of of left subtree depth, k = Count of right subtree depth */
-                /* m decreases by 1 after 1 right rotation, k increase by 1. */
+                /* m = Count of left subtree depth, k = Count of right subtree depth */
+                /* m decreases by 1 after 1 right rotation, k increases by 1. */
                 /* Subtract 1 from N to exclude root */
 
 

@@ -116,7 +116,7 @@ public class Project2 {
                          * If the earliest had an index bigger than the one that got removed,
                          * decremement earliest so it still points to the same item in the array
                          */
-                        /* also decrement i for the same reason */
+                        /* decrement i as all the new indices for the elements after decreased by 1*/
                         intervals.remove(i);
                         if (i < earliest) {
                             earliest--;
