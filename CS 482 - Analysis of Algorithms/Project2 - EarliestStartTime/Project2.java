@@ -30,10 +30,11 @@ public class Project2 {
         return false;
     }
 
-    // this function should only be called if a conflict still exists
-    // Find the interval with the earliest start time.
-    // If there are two intervals with the same earliest start, picked the one that
-    // finishes first
+    /*This function should only be called if a conflict still exists
+    * Find the interval with the earliest start time.
+    * If there are two intervals with the same earliest start, picked the one that
+    * finishes first
+    */    
     public static int findEarliest() {
         int min_start = Integer.MAX_VALUE; 
         int min_finish = Integer.MAX_VALUE;
