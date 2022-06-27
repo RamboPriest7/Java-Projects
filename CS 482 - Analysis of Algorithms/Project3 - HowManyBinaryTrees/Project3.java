@@ -12,6 +12,7 @@ public class Project3 {
 
     public static void findAmountOfTrees(int number_of_nodes) {
         for (int N = 1; N <= number_of_nodes; N++) {
+            //System.out.println(N);
             BigInteger current_count = BigInteger.valueOf(0);
 
             if (N % 2 == 0) {
