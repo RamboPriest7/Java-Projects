@@ -139,7 +139,7 @@ public class Project2 {
             /* read each line and split by whitespace */
             
             intervals.add(new int[] { Integer.parseInt(interval_string[0]), Integer.parseInt(interval_string[1]) }); 
-            /* parse each item and add interval as ints to list of intervals */
+            /* parse each item and add interval as ints to list of itvals */
         }
 
         removeConflicts(); /* Remove overlaps from arraylist of intervals */
