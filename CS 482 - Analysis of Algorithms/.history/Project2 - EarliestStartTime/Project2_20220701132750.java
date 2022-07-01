@@ -142,8 +142,8 @@ public class Project2 {
             /* parse each item and add interval as ints to list of itnervals */
         }
 
-        removeConflicts(); /* Remove overlaps from arraylist of intervals */
-        System.out.println(intervals.size()); 
+        removeConflicts(); /* Remove overlaps from arraylist of inte */
+        System.out.println(intervals.size());
 
     }// main ends
 

@@ -143,7 +143,7 @@ public class Project2 {
         }
 
         removeConflicts(); /* Remove overlaps from arraylist of intervals */
-        System.out.println(intervals.size()); 
+        System.out.println(intervals.size()); /* */
 
     }// main ends
 
