@@ -66,7 +66,7 @@ public class Project2 {
         /* Break ties using by finding earliest finish if there is an earliest start tie */
         if (duplicate_earliest) {
 
-            for (int i = 0; i < intervals.size(); i++) {
+            for (int i = 0; i < ; i++) {
                 if (intervals.get(i)[1] < min_finish && intervals.get(i)[0] == min_start) {
                     min_finish = intervals.get(i)[1];
                     index = i;
