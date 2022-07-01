@@ -93,7 +93,7 @@ public class Project2 {
             int earliest = findEarliest();
 
             for (int i = 0; i < intervals.size(); i++) {
-                /* for every interval that was not designated as earliest */
+                /* for every interval that was not designated as ear; */
                 if (i != earliest) {
                     
                     /* if its start OR end time is in between the interval with the earliest its a conflict*/ 
