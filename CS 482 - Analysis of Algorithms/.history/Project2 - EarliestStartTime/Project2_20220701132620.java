@@ -135,11 +135,8 @@ public class Project2 {
         earliest_already_checked = new ArrayList<int[]>();
 
         for (int i = 1; i <= N; i++) {
-            String[] interval_string = (Files.readAllLines(Paths.get("input.txt")).get(i)).split(" "); 
-            /* read each line and split by whitespace */
-            
-            intervals.add(new int[] { Integer.parseInt(interval_string[0]), Integer.parseInt(interval_string[1]) }); 
-            /* parse each item and add interval as ints to list of itnervals */
+            String[] interval_string = (Files.readAllLines(Paths.get("input.txt")).get(i)).split(" "); /* read each line and split by whitespace */
+            intervals.add(new int[] { Integer.parseInt(interval_string[0]), Integer.parseInt(interval_string[1]) }); /* parse each item and add interval as ints to list of itnervals */
         }
 
         removeConflicts();
