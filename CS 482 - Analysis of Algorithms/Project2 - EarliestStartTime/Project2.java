@@ -110,7 +110,7 @@ public class Project2 {
                          * If the earliest had an index bigger than the one that got removed,
                          * decremement earliest so it still points to the same item in the array
                          *
-                         * decrement i as all the new indices for the elements after decreased by 1
+                         * decrement i as all the indices for the elements after decreased by 1
                          * */
                         intervals.remove(i);
                         if (i < earliest) {
@@ -141,6 +141,8 @@ public class Project2 {
             intervals.add(new int[] { Integer.parseInt(interval_string[0]), Integer.parseInt(interval_string[1]) }); 
             /* parse each item and add interval as ints to list of intervals */
         }
+
+       // intervals.forEach(a-> System.out.println(a[0] + " " + a[1]));
 
         removeConflicts(); /* Remove overlaps from arraylist of intervals */
         System.out.println(intervals.size()); 
