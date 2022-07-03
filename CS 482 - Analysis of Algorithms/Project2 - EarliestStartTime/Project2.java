@@ -7,7 +7,9 @@ import java.util.ArrayList;
 
 public class Project2 {
 
-    // Those global variables be poppin.........
+    // N = Amount of Intervals 
+    // intervals = list of intervals
+    // earliest_already_checked = marking intervals deemed earliest so they are not double counted
     static int N;
     static ArrayList<int[]> intervals;
     static ArrayList<int[]> earliest_already_checked;
@@ -123,10 +125,7 @@ public class Project2 {
             }
         } // end while
 
-        // System.out.println("overlap is: " + overlap() + " ::the earliest is now: " +
-        // findEarliest());
-
-        // return result;
+       
     }
 
     public static void main(String[] args) throws IOException {
