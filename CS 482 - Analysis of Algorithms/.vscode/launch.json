@@ -1,0 +1,35 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch Project2",
+            "request": "launch",
+            "mainClass": "Project2",
+            "projectName": "CS 482 - Analysis of Algorithms_20ed6924"
+        },
+        {
+            "type": "java",
+            "name": "Launch Project2_Ken",
+            "request": "launch",
+            "mainClass": "Project2_Ken",
+            "projectName": "CS 482 - Analysis of Algorithms_20ed6924"
+        },
+        {
+            "type": "java",
+            "name": "Launch Project3",
+            "request": "launch",
+            "mainClass": "Project3",
+            "projectName": "CS 482 - Analysis of Algorithms_20ed6924"
+        }
+    ]
+}

@@ -58,7 +58,7 @@ public class Project3 {
                  */
 
 
-                int m = N - 1, k = N - 1 - m;
+                int m = N - 1, k = 0;
                 /* m = Count of left subtree depth, k = Count of right subtree depth */
                 /* m decreases by 1 after 1 right rotation, k increases by 1. */
                 /* Subtract 1 from N to exclude root */
@@ -103,7 +103,7 @@ public class Project3 {
                 */
 
 
-                int m = N - 1, k = N - 1 - m;
+                int m = N - 1, k = 0;
                 /* m = Count of left subtree depth, k = Count of right subtree depth */
                 /* m decreases by 1 after 1 right rotation, k increase by 1. */
 
@@ -115,7 +115,10 @@ public class Project3 {
                 }
 
                 current_count = current_count.add(current_count);
+                 /* Possible trees of first N-1/2 rotations multiplied by 2*/
+
                 current_count = current_count.add((amt_of_trees.get(m).multiply(amt_of_trees.get(m))));
+                /* Middle Tree */
 
             }
 

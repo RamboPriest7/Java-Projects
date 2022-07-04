@@ -119,7 +119,6 @@ public class Project2 {
                             earliest--;
                         }
                         i--;
-
                     }
                 }
             }
