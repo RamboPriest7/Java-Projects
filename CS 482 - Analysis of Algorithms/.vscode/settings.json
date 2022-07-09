@@ -2,5 +2,6 @@
     "java.project.sourcePaths": [
         "Project2 - EarliestStartTime",
         "Project3 - HowManyBinaryTrees"
-    ]
+    ],
+    "FSharp.suggestGitignore": false
 }

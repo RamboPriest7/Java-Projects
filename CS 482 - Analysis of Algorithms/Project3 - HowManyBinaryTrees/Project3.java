@@ -7,7 +7,8 @@ import java.math.BigInteger;
 import java.util.ArrayList;
 
 public class Project3 {
-    static int N;
+
+    static int N; /* Number read from input.txt */
     static ArrayList<BigInteger> amt_of_trees;
 
     public static void findAmountOfTrees(int number_of_nodes) {
@@ -132,7 +133,8 @@ public class Project3 {
         amt_of_trees = new ArrayList<BigInteger>();
         amt_of_trees.add(BigInteger.valueOf(1)); /* amt_of_trees.get(0) => 1 */
 
-        /* Base case: Amount of trees for N nodes will be calculated
+        /* Base case: O nodes = 1 possible tree
+        *  Amount of trees for N nodes will be calculated
         *  via an amalgamation of amounts of trees for N-1.....1 Nodes
         *  For N = 1, it should return 1 but it must be calculated by the function
         *  using the first element.
