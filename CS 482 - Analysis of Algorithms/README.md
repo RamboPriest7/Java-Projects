@@ -194,3 +194,56 @@ then the output should be the matching
 3: 3 8\
 4: 2 10\
 5: 1 5
+
+# Project 1: Dog Adoption---------------
+
+Overview: DogAdoption is a slight variant of the StableMarriageproblem. Instead of a set of N men and N women, there are N owners and 2N dogs. Instead of a matching pairing each man with a woman,each owner is matched with 2 dogs. Instead of stable meaning there is no pair m-w who would both preferthe other to their partner, it means there is no pair o-d where the owner o prefers d to 1 of his dogs andthe dog d prefers owner o. There is a fairly obvious modification ofPropose-Disposewhich can solve anyinstance of theDogAdoptionproblem.
+
+Details:The input will come from a file called input.txt which will be placed in the same directory as yourjava file. The first line of the file will have a single integer valueNwhich will be the number of owners. ThenextNlines will be the whitespace separated preference lists of theNowners (ie each of the nextNlineswill be a permutation of 1, 2, ..., 2N). The next 2Nlines will be the whitespace separated preference lists ofthe 2Ndogs (ie eachof the next 2Nlines will be a permutation of 1, 2, ..., N). See the sample input belowfor examples.
+
+Sample execution: 
+If input.txt contains
+3\
+1 2 3 4 5 6\
+3 4 5 6 1 2\
+5 6 1 2 3 4\
+1 2 3\
+1 2 3\
+2 3 1\
+2 3 1\
+3 1 2\
+3 1 2
+
+then the output should be just the “matching”. 
+1: 1 2\
+2: 3 4\
+3: 5 6
+
+If input.txt contains
+5
+1 2 3 4 5 6 7 8 9 10\
+1 2 3 4 5 6 7 8 9 10\
+1 2 3 4 5 6 7 8 9 10\
+1 2 3 4 5 6 7 8 9 10\
+1 2 3 4 5 6 7 8 9 10\
+5 4 3 2 1\
+4 1 2 3 5\
+3 5 2 1 4\
+1 2 3 4 5\
+5 3 4 5 1\
+1 2 3 4 5\
+2 5 4 3 1\
+3 5 1 2 4\
+2 1 4 5 3\
+4 5 3 2 1
+
+then the output should be the matching
+1: 4 6\
+2: 7 9\
+3: 3 8\
+4: 2 10\
+5: 1 5
+
+# Project 2: Earliest Start Time---------------
+
+# Project 3: How Many Binary Trees---------------
