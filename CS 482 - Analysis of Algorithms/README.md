@@ -292,7 +292,7 @@ then the output should be\
 
 # Project 3: How Many Binary Trees---------------
 
-Overview:Use Dynamic Programming to determine the number of different Binary Search Trees that contain the values 1, 2, 3, ..., N. 
+Overview: Use Dynamic Programming to determine the number of different Binary Search Trees that contain the values 1, 2, 3, ..., N. 
 
 Details: The input will come from a file called input.txt which will be placed in the same directory as your java file. The first and only line of the file will have a single integer value N. Your program will output the number of different Binary Search Trees which contain the values from 1, 2,. . .,N. Given the fact that these values grow very rapidly, you will probably want to use the java class BigInteger.You must calculate the value using dynamic programming. If you either hardcode the solution or use pure recursion (without using memoization or tabularization) expect to get almost no points. A dynamic programming solution can calculate the answer for N = 1000 in less than 10 seconds on a modest computer (I used a 2016 MacBook) while a recursive solution will be extremely slow when N = 25 (ish - depends a bitupon the power of the computer used and how you define extremely).
 
