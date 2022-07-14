@@ -194,3 +194,129 @@ then the output should be the matching
 3: 3 8\
 4: 2 10\
 5: 1 5
+
+# Project 1: Dog Adoption---------------
+
+Overview: DogAdoption is a slight variant of the StableMarriageproblem. Instead of a set of N men and N women, there are N owners and 2N dogs. Instead of a matching pairing each man with a woman,each owner is matched with 2 dogs. Instead of stable meaning there is no pair m-w who would both prefer the other to their partner, it means there is no pair o-d where the owner o prefers d to 1 of his dogs andthe dog d prefers owner o. There is a fairly obvious modification of Propose-Dispose which can solve any instance of the DogAdoption problem.
+
+Details:The input will come from a file called input.txt which will be placed in the same directory as your java file. The first line of the file will have a single integer valueNwhich will be the number of owners. ThenextNlines will be the whitespace separated preference lists of theNowners (ie each of the nextNlineswill be a permutation of 1, 2, ..., 2N). The next 2Nlines will be the whitespace separated preference lists ofthe 2Ndogs (ie each of the next 2N lines will be a permutation of 1, 2, ..., N). See the sample input below for examples.
+
+Sample execution: 
+If input.txt contains\
+3\
+1 2 3 4 5 6\
+3 4 5 6 1 2\
+5 6 1 2 3 4\
+1 2 3\
+1 2 3\
+2 3 1\
+2 3 1\
+3 1 2\
+3 1 2
+
+then the output should be just the “matching”. \
+1: 1 2\
+2: 3 4\
+3: 5 6
+
+If input.txt contains\
+5\
+1 2 3 4 5 6 7 8 9 10\
+1 2 3 4 5 6 7 8 9 10\
+1 2 3 4 5 6 7 8 9 10\
+1 2 3 4 5 6 7 8 9 10\
+1 2 3 4 5 6 7 8 9 10\
+5 4 3 2 1\
+4 1 2 3 5\
+3 5 2 1 4\
+1 2 3 4 5\
+5 3 4 5 1\
+1 2 3 4 5\
+2 5 4 3 1\
+3 5 1 2 4\
+2 1 4 5 3\
+4 5 3 2 1
+
+then the output should be the matching\
+1: 4 6\
+2: 7 9\
+3: 3 8\
+4: 2 10\
+5: 1 5
+
+# Project 2: Earliest Start Time---------------
+
+Overview: Recall the IntervalScheduling problem: you are given a set of intervals and asked to find the largest cardinality subset that has no overlapping intervals. We found that the EarliestStartingTime algorithm was not optimal by finding an instance where it did not get the best possible solution. Occassion-ally, you will want to test an algorithm on a problem to find an instance where it does not get the optimal solution. 
+
+Details: The input will come from a file called input.txt which will be placed in the same directory as your java file. The first line of the file will have a single integer valueNwhich will be the number ofintervals. The nextNlines will be the intervals represented bysiandfiseperated by whitespace. Your program should output a single integer which is the number of non-overlapping intervals found by the EarliestFinishingTime algorithm. It is likely that the number of intervals found will not be the optimal solution. See the sample input below for examples.
+
+Sample execution:
+If input.txt contains\
+8\
+1 2\
+1 3\
+1 4\
+1 5\
+1 6\
+1 7\
+1 8\
+1 9
+
+then the output should be\
+1
+
+If input.txt contains\
+5\
+1 10\
+2 3\
+4 5\
+6 7\
+8 9
+
+then the output should be\
+1
+
+If input.txt contains\
+8\
+1 6\
+2 3\
+4 5\
+7 12\
+8 9\
+10 11\
+13 18\
+14 15\
+
+then the output should be\
+3
+
+# Project 3: How Many Binary Trees---------------
+
+Overview: Use Dynamic Programming to determine the number of different Binary Search Trees that contain the values 1, 2, 3, ..., N. 
+
+Details: The input will come from a file called input.txt which will be placed in the same directory as your java file. The first and only line of the file will have a single integer value N. Your program will output the number of different Binary Search Trees which contain the values from 1, 2,. . .,N. Given the fact that these values grow very rapidly, you will probably want to use the java class BigInteger.You must calculate the value using dynamic programming. If you either hardcode the solution or use pure recursion (without using memoization or tabularization) expect to get almost no points. A dynamic programming solution can calculate the answer for N = 1000 in less than 10 seconds on a modest computer (I used a 2016 MacBook) while a recursive solution will be extremely slow when N = 25 (ish - depends a bitupon the power of the computer used and how you define extremely).
+
+Sample execution:\ 
+If input.txt contains\
+0
+
+then the output should be\
+1
+
+If input.txt contains\
+5
+
+then the output should be\
+42
+
+If input.txt contains\
+20
+
+then the output should be\
+6564120420
+
+If input.txt contains\
+100
+
+then the output should be\ 
+896519947090131496687170070074100632420837521538745909320
